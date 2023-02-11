@@ -1,0 +1,98 @@
+:root {
+    --my-paddging: 0.4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    color: rgba(87, 43, 43, 0.713);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "header menuu menuu menuu"
+    "hero hero hero hero"
+    "hero hero hero hero"
+    "main main image image"
+    "main main extra extra"
+    "baner baner baner baner";
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+}
+.header {
+    background-color: rgb(173, 105, 105);
+    grid-area: header;
+    padding: var(--my-paddging);
+}
+.menuu {
+    background-color: rgba(114, 176, 139, 0.485);
+    grid-area: menuu;
+    padding: var(--my-paddging);
+}
+.hero {
+    background-color: aqua;
+    grid-area: hero;
+    padding: var(--my-paddging);
+}
+.main {
+    background-color: rgba(77, 77, 162, 0.534);
+    grid-area: main;
+    padding: var(--my-paddging);
+}
+.image {
+    background-color: bisque;
+    grid-area: image;
+    padding: var(--my-paddging);
+}
+.extra{
+    background-color: rgba(0, 0, 0, 0.458);
+    grid-area: extra;
+    padding: var(--my-paddging);
+}
+.baner {
+    background-color: rgba(72, 124, 107, 0.519);
+    grid-area: baner;
+    padding: var(--my-paddging);
+}
+
+
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+        grid-template-areas:
+        "header header header"
+        "hero hero hero"
+        "hero hero hero"
+        "menuu main main"
+        "menuu main main"
+        "menuu baner baner"
+        "menuu extra image";
+    }
+}
+@media (max-width: 480px){
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(13, 1fr);
+        grid-template-areas: 
+        "header"
+        "menuu"
+        "hero"
+        "hero"
+        "main"
+        "main"
+        "main"
+        "baner"
+        "baner"
+        "extra"
+        "extra"
+        "image"
+        "image"
+        ;
+    }
+}
